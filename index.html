@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name | Portfolio</title>
+  <meta name="description" content="Portfolio of Your Name.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top">Your Name</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <button id="theme-toggle" type="button" aria-label="Toggle dark mode">&#9790;</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow">Hello, I'm</p>
+      <h1>Your Name</h1>
+      <p class="tagline">One sentence about what you do and what you care about.</p>
+      <a class="button" href="#projects">See my work</a>
+    </section>
+
+    <section id="about" class="reveal">
+      <h2>About</h2>
+      <p>
+        Replace this with a short paragraph about who you are, what you're
+        working toward, and what makes your background interesting.
+      </p>
+    </section>
+
+    <section id="experience" class="reveal">
+      <h2>Experience</h2>
+      <p class="hint">Click a card to expand it.</p>
+
+      <article class="card">
+        <button class="card-header" type="button" aria-expanded="false">
+          <span><strong>Job Title</strong> &middot; Company Name</span>
+          <span class="dates">2024 &ndash; Present</span>
+        </button>
+        <div class="card-body" hidden>
+          <ul>
+            <li>What you did, with a number or result if you can.</li>
+            <li>A skill or tool you used.</li>
+            <li>Something you're proud of.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card">
+        <button class="card-header" type="button" aria-expanded="false">
+          <span><strong>Previous Role</strong> &middot; Another Company</span>
+          <span class="dates">2022 &ndash; 2024</span>
+        </button>
+        <div class="card-body" hidden>
+          <ul>
+            <li>Describe the role in one line.</li>
+            <li>Add the most relevant responsibilities.</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section id="projects" class="reveal">
+      <h2>Projects</h2>
+
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button class="filter active" type="button" data-filter="all">All</button>
+        <button class="filter" type="button" data-filter="web">Web</button>
+        <button class="filter" type="button" data-filter="data">Data</button>
+        <button class="filter" type="button" data-filter="other">Other</button>
+      </div>
+
+      <div class="grid">
+        <article class="project" data-category="web">
+          <h3>Project One</h3>
+          <p>A short description of what it does and why you built it.</p>
+          <span class="tag">Web</span>
+        </article>
+        <article class="project" data-category="data">
+          <h3>Project Two</h3>
+          <p>A short description of what it does and why you built it.</p>
+          <span class="tag">Data</span>
+        </article>
+        <article class="project" data-category="web">
+          <h3>Project Three</h3>
+          <p>A short description of what it does and why you built it.</p>
+          <span class="tag">Web</span>
+        </article>
+        <article class="project" data-category="other">
+          <h3>Project Four</h3>
+          <p>A short description of what it does and why you built it.</p>
+          <span class="tag">Other</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="reveal">
+      <h2>Contact</h2>
+      <p>Want to work together or just say hi?</p>
+      <a class="button" href="mailto:you@example.com">you@example.com</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Your Name</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
