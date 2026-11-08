@@ -59,25 +59,32 @@ filterButtons.forEach((button) => {
   });
 });
 
-/* ---------- 4. Reveal sections as you scroll ---------- */
-const revealItems = document.querySelectorAll(".reveal");
+/* ---------- 4. Tabs ---------- */
+// Each tab is a <section> whose id matches a nav link (href="#about" etc.).
+// To add a tab: add a section with an id, a nav link, and put the id in this list.
+const tabIds = ["home", "about", "experience", "projects", "contact"];
+const navLinks = document.querySelectorAll(".site-header nav a");
 
-if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12 }
-  );
-  revealItems.forEach((item) => observer.observe(item));
-} else {
-  revealItems.forEach((item) => item.classList.add("visible"));
+function showTab(id) {
+  if (!tabIds.includes(id)) id = "home";
+
+  tabIds.forEach((tabId) => {
+    document.getElementById(tabId).hidden = tabId !== id;
+  });
+
+  navLinks.forEach((link) => {
+    const isActive = link.getAttribute("href") === "#" + id;
+    link.classList.toggle("active", isActive);
+    if (isActive) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
+  });
+
+  window.scrollTo(0, 0);
 }
+
+// The URL hash (#projects) drives the tabs, so links and the back button work.
+window.addEventListener("hashchange", () => showTab(location.hash.slice(1)));
+showTab(location.hash.slice(1));
 
 /* ---------- Footer year ---------- */
 document.getElementById("year").textContent = new Date().getFullYear();
